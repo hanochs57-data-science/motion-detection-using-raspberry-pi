@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intruder Alert</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Full-screen live video -->
+  <div class="stage">
+    <img id="video" alt="Live feed" hidden>
+    <div id="noFeed" class="nofeed">Waiting for camera…</div>
+
+    <div class="overlay top-left" id="statusPill">
+      <span class="dot"></span>
+      <span id="statusText">Connecting…</span>
+      <button id="armBtn">…</button>
+    </div>
+    <div class="overlay top-right">
+      <span id="clock"></span>
+      <button id="sideToggle" class="icon" title="Toggle history">☰</button>
+    </div>
+  </div>
+
+  <!-- Detection history (right side) -->
+  <aside id="side">
+    <div class="side-head">
+      <h2>Detection history</h2>
+      <div class="summary" id="summary">—</div>
+      <div class="tabs" id="tabs">
+        <button data-range="day">24h</button>
+        <button data-range="week" class="active">Week</button>
+        <button data-range="month">Month</button>
+        <button data-range="year">Year</button>
+      </div>
+      <label class="check"><input type="checkbox" id="footageOnly"> Footage only</label>
+    </div>
+    <div id="list" class="list"></div>
+  </aside>
+
+  <!-- Snapshot / clip viewer -->
+  <div id="viewer" hidden>
+    <div id="viewerBody"></div>
+    <div id="viewerCaption"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
